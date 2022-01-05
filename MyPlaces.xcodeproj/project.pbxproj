@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B520A4002784ADF6006B3836 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B520A3FF2784ADF6006B3836 /* NewPlaceViewController.swift */; };
 		B56D73E62778BC17007C044B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D73E52778BC17007C044B /* AppDelegate.swift */; };
 		B56D73E82778BC17007C044B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D73E72778BC17007C044B /* SceneDelegate.swift */; };
 		B56D73ED2778BC18007C044B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56D73EB2778BC18007C044B /* Main.storyboard */; };
@@ -14,9 +15,11 @@
 		B56D73F22778BCB2007C044B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56D73F02778BCB2007C044B /* LaunchScreen.storyboard */; };
 		B56D73FA2778CD36007C044B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D73F92778CD36007C044B /* MainViewController.swift */; };
 		B5C0BCD227846DE000A54FF8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0BCD127846DE000A54FF8 /* CustomTableViewCell.swift */; };
+		B5C0BCD4278484A700A54FF8 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0BCD3278484A700A54FF8 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B520A3FF2784ADF6006B3836 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		B56D73E22778BC17007C044B /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56D73E52778BC17007C044B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B56D73E72778BC17007C044B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		B56D73F32778BCB2007C044B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B56D73F92778CD36007C044B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B5C0BCD127846DE000A54FF8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		B5C0BCD3278484A700A54FF8 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 				B56D73E52778BC17007C044B /* AppDelegate.swift */,
 				B56D73F92778CD36007C044B /* MainViewController.swift */,
 				B5C0BCD127846DE000A54FF8 /* CustomTableViewCell.swift */,
+				B5C0BCD3278484A700A54FF8 /* PlaceModel.swift */,
 				B56D73E72778BC17007C044B /* SceneDelegate.swift */,
 				B56D73EB2778BC18007C044B /* Main.storyboard */,
+				B520A3FF2784ADF6006B3836 /* NewPlaceViewController.swift */,
 				B56D73EE2778BCB2007C044B /* Assets.xcassets */,
 				B56D73F02778BCB2007C044B /* LaunchScreen.storyboard */,
 				B56D73F32778BCB2007C044B /* Info.plist */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56D73FA2778CD36007C044B /* MainViewController.swift in Sources */,
+				B520A4002784ADF6006B3836 /* NewPlaceViewController.swift in Sources */,
 				B56D73E62778BC17007C044B /* AppDelegate.swift in Sources */,
+				B5C0BCD4278484A700A54FF8 /* PlaceModel.swift in Sources */,
 				B5C0BCD227846DE000A54FF8 /* CustomTableViewCell.swift in Sources */,
 				B56D73E82778BC17007C044B /* SceneDelegate.swift in Sources */,
 			);
@@ -292,21 +300,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BPXP6739DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mitrioApps.MyPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -321,21 +329,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BPXP6739DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mitrioApps.MyPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
