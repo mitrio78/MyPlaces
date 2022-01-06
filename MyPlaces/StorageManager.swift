@@ -17,5 +17,12 @@ class StorageManager {
         }
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
+    
+    static func deleteObject(_ place: Place) {
+        try! realm.write {
+            realm.delete(place)
+        }
+    }
+    
 }
 
