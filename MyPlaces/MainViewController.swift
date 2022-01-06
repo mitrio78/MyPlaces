@@ -44,25 +44,6 @@ class MainViewController: UITableViewController {
         return cell
     }
     
-    //MARK: - Navigation
-    
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-        guard let newPlaceVC = segue.source as? NewPlaceViewController else {return}
-        
-        newPlaceVC.saveNewPlace()
-        tableView.reloadData()
-    }
-    
-//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let place = places[indexPath.row]
-//        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") {(_, _) in
-//            StorageManager.deleteObject(place)
-//        }
-//        tableView.deleteRows(at: [indexPath], with: .automatic)
-//
-//        return [deleteAction]
-//    }
-    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let place = places[indexPath.row]
@@ -77,5 +58,27 @@ class MainViewController: UITableViewController {
 
         return swipeActionsConfiguration
     }
+    
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let place = places[indexPath.row]
+            let newPlaceVC = segue.destination as! NewPlaceViewController
+            newPlaceVC.currentPlace = place
+            
+        }
+    }
+    
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newPlaceVC = segue.source as? NewPlaceViewController else {return}
+        
+        newPlaceVC.savePlace()
+        tableView.reloadData()
+    }
+    
+
 
 }
