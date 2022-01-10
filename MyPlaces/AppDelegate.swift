@@ -10,16 +10,11 @@ import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let config = Realm.Configuration(schemaVersion: 2)
-        
+        let config = Realm.Configuration(schemaVersion: 3)
         Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
-        
+//        let realm = try! Realm()
         return true
     }
 
