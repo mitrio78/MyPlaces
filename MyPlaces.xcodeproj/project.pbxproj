@@ -15,6 +15,7 @@
 		B56D73EF2778BCB2007C044B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56D73EE2778BCB2007C044B /* Assets.xcassets */; };
 		B56D73F22778BCB2007C044B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56D73F02778BCB2007C044B /* LaunchScreen.storyboard */; };
 		B56D73FA2778CD36007C044B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D73F92778CD36007C044B /* MainViewController.swift */; };
+		B5B5E66A278EED3A00F951DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5E669278EED3A00F951DA /* MapViewController.swift */; };
 		B5C0BCD227846DE000A54FF8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0BCD127846DE000A54FF8 /* CustomTableViewCell.swift */; };
 		B5C0BCD4278484A700A54FF8 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0BCD3278484A700A54FF8 /* PlaceModel.swift */; };
 		B5CEFA1E278C9752005F2337 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CEFA1D278C9751005F2337 /* RatingControl.swift */; };
@@ -34,6 +35,7 @@
 		B56D73F12778BCB2007C044B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B56D73F32778BCB2007C044B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B56D73F92778CD36007C044B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B5B5E669278EED3A00F951DA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B5C0BCD127846DE000A54FF8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B5C0BCD3278484A700A54FF8 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		B5CEFA1D278C9751005F2337 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				B520A40127862F7E006B3836 /* StorageManager.swift */,
 				B56D73E72778BC17007C044B /* SceneDelegate.swift */,
 				B56D73EB2778BC18007C044B /* Main.storyboard */,
+				B5B5E669278EED3A00F951DA /* MapViewController.swift */,
 				B520A3FF2784ADF6006B3836 /* NewPlaceViewController.swift */,
 				B56D73EE2778BCB2007C044B /* Assets.xcassets */,
 				B56D73F02778BCB2007C044B /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				B520A4002784ADF6006B3836 /* NewPlaceViewController.swift in Sources */,
 				B56D73E62778BC17007C044B /* AppDelegate.swift in Sources */,
 				B520A40227862F7E006B3836 /* StorageManager.swift in Sources */,
+				B5B5E66A278EED3A00F951DA /* MapViewController.swift in Sources */,
 				B5CEFA1E278C9752005F2337 /* RatingControl.swift in Sources */,
 				B5C0BCD4278484A700A54FF8 /* PlaceModel.swift in Sources */,
 				B5C0BCD227846DE000A54FF8 /* CustomTableViewCell.swift in Sources */,
@@ -381,6 +385,7 @@
 				DEVELOPMENT_TEAM = BPXP6739DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For directions to your favourite place, also get place address";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -411,6 +416,7 @@
 				DEVELOPMENT_TEAM = BPXP6739DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For directions to your favourite place, also get place address";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
