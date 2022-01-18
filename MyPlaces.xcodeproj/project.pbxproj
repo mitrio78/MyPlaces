@@ -385,6 +385,7 @@
 				DEVELOPMENT_TEAM = BPXP6739DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For picking image of place";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For directions to your favourite place, also get place address";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -416,6 +417,7 @@
 				DEVELOPMENT_TEAM = BPXP6739DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For picking image of place";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For directions to your favourite place, also get place address";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

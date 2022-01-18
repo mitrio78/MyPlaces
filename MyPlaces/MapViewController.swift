@@ -108,7 +108,7 @@ class MapViewController: UIViewController {
             }
             break
         case .notDetermined:
-            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
         @unknown default:
             print("New case")
         }
@@ -152,6 +152,11 @@ extension MapViewController: MKMapViewDelegate {
 
 
 extension MapViewController: CLLocationManagerDelegate {
+    
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//        checkLocationAuthorization()
+//    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
