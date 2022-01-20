@@ -126,7 +126,7 @@
                                                         <backgroundConfiguration key="background" image="Location"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <segue destination="CPh-DA-y5p" kind="presentation" identifier="getAdress" id="Rg9-g6-0pF"/>
+                                                        <segue destination="CPh-DA-y5p" kind="presentation" identifier="getAddress" id="Rg9-g6-0pF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -294,10 +294,25 @@
                                     <action selector="centerViewOnUserLocation" destination="CPh-DA-y5p" eventType="touchUpInside" id="f7K-LT-J4F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C45-CD-W9q">
+                                <rect key="frame" x="182" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="J16-ZZ-1L2"/>
+                                    <constraint firstAttribute="height" constant="50" id="mRL-Mu-Gul"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="GetDirection"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="CPh-DA-y5p" eventType="touchUpInside" id="hCE-fh-31X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ITu-u2-a2g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ITu-u2-a2g" firstAttribute="bottom" secondItem="C45-CD-W9q" secondAttribute="bottom" constant="40" id="1dc-IQ-dtT"/>
                             <constraint firstItem="ITu-u2-a2g" firstAttribute="bottom" secondItem="Him-aT-DhU" secondAttribute="bottom" constant="130" id="3T8-0p-nUk"/>
                             <constraint firstItem="rMN-0p-MMq" firstAttribute="top" secondItem="ITu-u2-a2g" secondAttribute="top" constant="40" id="5Sm-uJ-ouB"/>
                             <constraint firstItem="ITu-u2-a2g" firstAttribute="trailing" secondItem="rMN-0p-MMq" secondAttribute="trailing" constant="40" id="5YJ-P0-FsK"/>
@@ -313,11 +328,13 @@
                             <constraint firstItem="gh9-47-TkI" firstAttribute="trailing" secondItem="ITu-u2-a2g" secondAttribute="trailing" id="o4b-45-lfd"/>
                             <constraint firstItem="gh9-47-TkI" firstAttribute="leading" secondItem="ITu-u2-a2g" secondAttribute="leading" id="oNv-Fc-NZG"/>
                             <constraint firstAttribute="bottom" secondItem="gh9-47-TkI" secondAttribute="bottom" id="rgk-6L-AUg"/>
+                            <constraint firstItem="C45-CD-W9q" firstAttribute="centerX" secondItem="hQN-Br-MiX" secondAttribute="centerX" id="zjg-aa-6ee"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="3ZJ-oD-J3q" id="by5-Kl-ziH"/>
                         <outlet property="doneButton" destination="HNl-Fh-znq" id="UO2-WD-qJ7"/>
+                        <outlet property="goButton" destination="C45-CD-W9q" id="ucl-Fu-4v2"/>
                         <outlet property="mapPinImage" destination="i24-AU-huR" id="TxX-En-TRm"/>
                         <outlet property="mapView" destination="gh9-47-TkI" id="m7f-C3-POY"/>
                     </connections>
@@ -511,6 +528,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="Pin" width="42" height="42"/>
