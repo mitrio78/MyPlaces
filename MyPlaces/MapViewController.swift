@@ -19,9 +19,15 @@ class MapViewController: UIViewController {
     var place = Place()
     var annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 10000.00
+    let regionInMeters: Double = 5000.00
     var incomeSegueIdentifier = ""
     var placeCoordinate: CLLocationCoordinate2D?
+    var previousLocation : CLLocation? {
+        didSet {
+            startTrackingUserLocation()
+        }
+    }
+    var directionsArray: [MKDirections] = []
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapPinImage: UIImageView!
@@ -61,6 +67,13 @@ class MapViewController: UIViewController {
             doneButton.isHidden = true
             goButton.isHidden = false
         }
+    }
+    
+    private func resetMapView(withNew directions: MKDirections) {
+        mapView.removeOverlays(mapView.overlays)
+        directionsArray.append(directions)
+        let _ = directionsArray.map { $0.cancel() }
+        directionsArray.removeAll()
     }
     
     private func setupPlacemark () {
@@ -141,12 +154,16 @@ class MapViewController: UIViewController {
             showAlert(title: "Error", message: "Current location is not found")
             return
         }
-        guard let request = createDirectionRequest(from: location) else {
+        locationManager.startUpdatingLocation()
+        previousLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        guard let request = createDirectionsRequest(from: location) else {
             showAlert(title: "Error", message: "Destination Not Found ")
             return
         }
         
+        
         let directions = MKDirections(request: request)
+        resetMapView(withNew: directions)
         
         directions.calculate { (response, error) in
             if let error = error {
@@ -164,7 +181,7 @@ class MapViewController: UIViewController {
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
                 let distance = String(format: "%1f", route.distance / 1000)
                 let timeInterval = String(format: "%1f", route.expectedTravelTime / 60)
-                
+                //set new label (2)
                 print("Расстояние до места: \(distance) км.")
                 print("Время пути: \(timeInterval) мин.")
             }
@@ -173,7 +190,7 @@ class MapViewController: UIViewController {
         
     }
     
-    private func createDirectionRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
+    private func createDirectionsRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
         guard let destinationCoordinate = placeCoordinate else { return nil }
         let startingLocation = MKPlacemark(coordinate: coordinate)
         let destination = MKPlacemark(coordinate: destinationCoordinate)
@@ -197,6 +214,21 @@ class MapViewController: UIViewController {
             let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    private func startTrackingUserLocation() {
+        
+        guard let previousLocation = previousLocation else {
+            return
+        }
+        let center = getCenterLocation(for: mapView)
+        guard center.distance(from: previousLocation) > 50 else {return}
+        self.previousLocation = center
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
+            self.showUserLocation()
+        }
+        
     }
 }
 
@@ -222,6 +254,12 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)
         let geocoder = CLGeocoder()
+        if incomeSegueIdentifier == "showPlace" && previousLocation != nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.showUserLocation()
+            }
+        }
+        geocoder.cancelGeocode()
         geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
             if let error = error {
                 print(error)
