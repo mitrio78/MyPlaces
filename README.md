@@ -7,4 +7,4 @@ Main features:
 * app is using Realm DB to store data.
 * uses MapKit to get address of place
 * uses map to get user's location
-* renders route from user's location to saved place
+* renders routes from user's location to saved place
