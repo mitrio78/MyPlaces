@@ -5,3 +5,6 @@ Main features:
 * add favourite places(Name, Location, Type of place and Photo).
 * use camera/gallery to upload image to New Place.
 * app is using Realm DB to store data.
+* uses MapKit to get address of place
+* uses map to get user's location
+* renders route from user's location to saved place
